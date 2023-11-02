@@ -1,0 +1,89 @@
+<div class="container">
+  <div>
+    <span class="mission material-symbols-outlined"> target</span>
+    <h2>Misión</h2>
+    <p>
+      Empoderar a las comunidades rurales proporcionando un software educativo
+      integral que facilite el aprendizaje y el crecimiento. Nos esforzamos por
+      ser un puente entre la educación y los estudiantes rurales, ofreciendo
+      acceso a cursos, bibliotecas y estadísticas educativas.
+    </p>
+  </div>
+  <div>
+    <span class="vision material-symbols-outlined"> visibility</span>
+    <h2>Visión</h2>
+    <p>
+      Nuestra misión es empoderar a las comunidades rurales proporcionando un
+      software educativo integral que facilite el aprendizaje y el crecimiento.
+      Nos esforzamos por ser un puente entre la educación y los estudiantes
+      rurales, ofreciendo acceso a cursos, bibliotecas y estadísticas
+      educativas.
+    </p>
+  </div>
+  <div>
+    <span class="values material-symbols-outlined"> diamond</span>
+    <h2>Valores</h2>
+    <p>
+      Estamos comprometidos con la educación como medio para transformar vidas y
+      comunidades. Innovamos constantemente en busca de soluciones tecnológicas
+      para superar desafíos educativos. Nuestro objetivo es hacer que la
+      educación sea accesible para todos, sin importar dónde se encuentren.
+    </p>
+  </div>
+</div>
+<style lang="scss">
+  .container {
+    width: 100%;
+    padding: 3rem 3.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+
+    div {
+      text-align: center;
+
+      .material-symbols-outlined {
+        font-size: 3rem;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &.mission {
+          background-color: #f4d03f;
+          background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+        }
+
+        &.vision {
+          background-color: #ff3cac;
+          background-image: linear-gradient(
+            225deg,
+            #ff3cac 0%,
+            #784ba0 50%,
+            #2b86c5 100%
+          );
+        }
+
+        &.values {
+          background-color: #74ebd5;
+          background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+        }
+
+        text-shadow: 0.1rem 0.5rem 0.5rem hsla(0, 0%, 0%, 10%);
+
+      }
+
+      h2 {
+        font-weight: 600;
+        font-size: 3rem;
+        color: hsl(0, 0%, 20%);
+        margin-block-end: 1rem;
+      }
+
+      p {
+        max-width: 30ch;
+        color: hsl(0, 0%, 30%);
+        font-size: 1.2rem;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import "../../styles/main.scss";
+---
+
+<header>
+  <nav>
+    <a class="logotype" href="/">
+      <img src="/assets/lightbulb.svg" alt="" />
+      <span>SolviQ</span>
+    </a>
+    <ul class="hidden">
+      <li>
+        <a href="#">Conocenos</a>
+      </li>
+      <li>
+        <a href="/account">
+          <span class="icon material-symbols-outlined">login</span>
+          <span>Acceder</span>
+        </a>
+      </li>
+    </ul>
+    <span id="burger-button" class="burger-button material-symbols-outlined">menu</span>
+  </nav>
+
+  
+</header>
+<style lang="scss">
+  @use "../../styles/variables.scss" as vars;
+
+  header {
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.6rem 2.9rem;
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(0, 0%, 10%);
+
+      .logotype {
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+
+        img {
+          width: 1.6rem;
+          margin-inline-end: 0.5rem;
+        }
+      }
+
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+
+      .burger-button {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+        li {
+          margin-inline-start: 1rem;
+
+          .icon {
+            margin-inline-end: 0.4rem;
+            font-variation-settings:
+              "FILL" 0,
+              "wght" 350,
+              "GRAD" 0,
+              "opsz" 8; // Optical size
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        ul.hidden {
+          display: none;
+        }
+
+        .burger-button {
+          display: block;
+        }
+      }
+    }
+
+  }
+</style>
+<script>
+
+</script>

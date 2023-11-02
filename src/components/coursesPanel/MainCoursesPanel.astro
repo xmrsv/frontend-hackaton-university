@@ -1,0 +1,87 @@
+---
+const response = await fetch("http://localhost:8080/teachers");
+const data = await response.json();
+
+console.log(data);
+---
+
+<h1>Cursos</h1>
+<div class="container">
+  {
+    data.map((course) => {
+      return (
+        <div class="card">
+          <h2>{course.course}</h2>
+          <div class="data">
+            <ul>
+              <li>
+                <p>
+                  Docente: <span class="label-value">{course.name}</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Grupo de estudio:
+                  <span class="label-value">{course.studyGroup}</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Aula: <span class="label-value">{course.classroom}</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Tu puntaje actual:
+                  <span class="label-value">{course.score + "/20"}</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
+<style lang="scss">
+  h1 {
+    margin-inline-start: 3rem;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  .container {
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    .card {
+      border-radius: 1rem;
+      background-color: hsla(0, 0%, 0%, 10%);
+      padding: 2rem;
+      margin: 0.5rem;
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-block-end: 0.5rem;
+      }
+
+      .label-value {
+        font-weight: 600;
+      }
+
+      .data {
+        margin-block-end: 1rem;
+
+        ul {
+          list-style: none;
+        }
+      }
+      .score {
+      }
+    }
+  }
+</style>

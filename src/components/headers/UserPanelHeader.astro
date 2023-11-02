@@ -1,0 +1,72 @@
+---
+import "../../styles/main.scss";
+---
+
+<header>
+  <nav>
+    <a class="logotype" href="/">
+      <img src="/assets/lightbulb.svg" alt="" />
+      <span>SolviQ</span>
+    </a>
+    <ul>
+      <li>
+        <a href="/account/">
+          <span class="material-symbols-outlined"> person</span>
+          <span>Cuenta</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <style lang="scss">
+    @use "../../styles/variables.scss" as vars;
+
+    header {
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.6rem 2.9rem;
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(0, 0%, 10%);
+
+        .logotype {
+          display: flex;
+          align-items: center;
+          font-weight: 900;
+
+          img {
+            width: 1.6rem;
+            margin-inline-end: 0.5rem;
+          }
+        }
+
+        a {
+          color: inherit;
+          text-decoration: inherit;
+        }
+
+        ul {
+          display: flex;
+          list-style: none;
+          li {
+            margin-inline-start: 1rem;
+
+            .icon {
+              margin-inline-end: 0.4rem;
+              font-variation-settings:
+                "FILL" 0,
+                "wght" 350,
+                "GRAD" 0,
+                "opsz" 8; // Optical size
+            }
+
+            a {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</header>

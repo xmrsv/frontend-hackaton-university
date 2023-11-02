@@ -1,0 +1,90 @@
+---
+const response = await fetch("http://localhost:8080/books");
+const data = await response.json();
+
+console.log(data);
+---
+
+<div class="container">
+  <h2>Libros recomendados</h2>
+  <p class="text-question">
+    ¿No sabes que leer? <a
+      target="_blank"
+      href="https://poe.com/SolviQAsistente"
+      >Consulta con el asistente de SolviQ</a
+    >
+  </p>
+  <div class="book-gallery">
+    {
+      data.map((book) => {
+        return (
+          <div class="book-card">
+            <img src={"assets/" + book.imagePath} alt="" />
+            <p class="title">{book.title}</p>
+            <p class="author">{book.author}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
+
+<style lang="scss">
+  .container {
+    padding: 1.6rem 3rem;
+
+    h2 {
+      font-size: 4rem;
+      font-weight: 600;
+      margin-block-end: 1rem;
+    }
+
+    .text-question {
+      font-size: 2rem;
+      margin-block-end: 3rem;
+
+      a {
+        color: hsl(217, 95%, 57%);
+      }
+    }
+
+    .book-gallery {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fill,
+        minmax(9rem, 1fr)
+      ); /* Ajustar el tamaño mínimo de las tarjetas */
+      gap: 4rem; /* Mantener el espacio entre las tarjetas */
+
+      .book-card {
+        width: fit-content;
+        border-radius: 0.5rem;
+        display: block;
+        padding: 1.5rem; /* Mantener el padding de las tarjetas */
+        background-color: hsl(0, 0%, 94%);
+        box-shadow: 0 0.4rem 0.5rem 0.2rem hsla(0, 0%, 0%, 15%);
+
+        img {
+          max-width: 9rem; /* Reducir el tamaño máximo de las imágenes */
+          background-color: hsl(0, 0%, 90%);
+          border-radius: 0.5rem;
+          margin-block-end: 1rem;
+          object-fit: contain;
+          aspect-ratio: 1/1.6;
+        }
+
+        .title {
+          max-width: 9rem; /* Ajustar el ancho máximo del título al nuevo tamaño de las imágenes */
+          text-wrap: wrap;
+          font-size: 1.1rem;
+          font-weight: 500;
+          margin-block-end: 0.5rem;
+        }
+
+        .author {
+          margin-block-end: 0.5rem;
+        }
+      }
+    }
+  }
+</style>

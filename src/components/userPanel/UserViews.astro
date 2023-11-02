@@ -1,0 +1,78 @@
+<div class="container">
+  <a href="/account/courses" class="courses">
+    <span class="material-symbols-outlined"> school</span>
+    <h3>Cursos</h3>
+    <p>
+      Explora y aprende con nuestros diversos cursos. ¡Impulsa tu conocimiento y
+      habilidades!
+    </p>
+  </a>
+  <a href="/library" class="library">
+    <span class="material-symbols-outlined"> library_books</span>
+    <h3>Biblioteca</h3>
+    <p>
+      Descubre nuestra biblioteca. Lee libros en físico o en PDF. ¡Información
+      al alcance de tu mano!
+    </p>
+  </a>
+  <a href="/account/statistics" class="statistics">
+    <span class="material-symbols-outlined"> query_stats</span>
+    <h3>Estadísticas</h3>
+    <p>
+      Monitorea tu progreso. ¡Optimiza tu aprendizaje con nuestras estadísticas
+      detalladas!
+    </p>
+  </a>
+</div>
+
+<style lang="scss">
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    .courses,
+    .library,
+    .statistics {
+      display: block;
+      max-width: 30ch;
+      padding: 3rem;
+      background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+      border-radius: 1.2rem;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid transparent;
+      transition: border 200ms ease-in-out, transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+
+      &:hover {
+        border: 1px solid hsla(0, 0%, 0%, 20%);
+        transform: translateY(-0.5rem);
+        box-shadow: 0 0.8rem 0.9rem 0.1rem hsla(0, 0%, 0%, 20%);
+      }
+
+      span {
+        font-size: 3rem;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 32;
+        margin-block-end: 1rem;
+        color: hsla(0, 0%, 0%, 80%);
+      }
+
+      h3 {
+        margin-block-end: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: hsla(0, 0%, 0%, 80%);
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: hsla(0, 0%, 0%, 70%);
+      }
+    }
+  }
+</style>
